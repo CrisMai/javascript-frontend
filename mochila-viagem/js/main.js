@@ -8,21 +8,24 @@ itens.forEach((elemento) => {
 })
 
 form.addEventListener("submit", (evento) => {
-    evento.preventDefault()
+    evento.preventDefault();
 
     const nome =  evento.target.elements["nome"];
     const quantidade = evento.target.elements["quantidade"];
 
     const existe = itens.find(elemento => elemento.nome === nome.value)
 
+    //  Const para conferir elemento nome no array itens 
     const itemAtual = {
         "nome": nome.value,
         "quantidade": quantidade.value
     }
 
+    // Condicional para conferir se o elemento 
     if (existe) {
         itemAtual.id = existe.id;
         atualizaElemento(itemAtual);
+        itens[existe.id] = itemAtual
     }
     else {
         itemAtual.id = itens.length;
@@ -53,6 +56,6 @@ function criaElemento(item) {
 }
 
 function atualizaElemento(item) {
-    document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantidade;
+    document.querySelector("[data-id='"+item.id+"']").innerHTML = item.quantidade
 }
 
