@@ -75,5 +75,9 @@ function botaoDeleta(id) {
 //Função para deletar os itens enviados da função botaoDeleta no array de itens e no navegador
 function deletaElemento(tag, id) { 
     tag.remove()
+
+    itens.splice(itens.findIndex(elemento => elemento.id === id), 1)
+
+    localStorage.setItem("itens", JSON.stringify(itens))
    
 }
