@@ -1,6 +1,6 @@
 
 const menorValor = 10;
-const maiorValor = 1000;
+const maiorValor = 100;
 
 const numeroSecreto = gerarNumeroAleatorio();
 
